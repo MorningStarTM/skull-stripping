@@ -8,10 +8,10 @@ Skull stripping, also known as brain extraction or brain masking, is the process
 I used brain tumor dataset from kaggle and i created this dataset. This dataset contains brain MRI images and its masks. I used Label Studio to create mask. In my dataset, 722 MRI images and 722 masks for brain images. image size is 512x512 but i converted it into 256x256. 
 
 # Model
-| Model       | IoU         |
-| ----------- | ----------- |
-| U-Net       | 86%         |
-| U-Net++     | ----        |
+| Model               | IoU         |
+| ------------------- | ----------- |
+| U-Net               | 79%         |
+| Attention U-Net     | 82.94%      |
 
 # Mask Prediction
 
