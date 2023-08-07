@@ -28,7 +28,7 @@ I used brain tumor dataset from kaggle and i created this dataset. This dataset 
 ## Brain image and Mask
 ![App Screenshot](https://github.com/MorningStarTM/skull-stripping/blob/main/images/u2.PNG?raw=true)
 <br>
-
+<br>
 
 ## __Brain Image - True Mask - Predicted Mask__
 ### U-Net
