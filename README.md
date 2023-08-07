@@ -18,8 +18,11 @@ I used brain tumor dataset from kaggle and i created this dataset. This dataset 
 
 
 ## Images and Mask
-
+### U-Net
 ![App Screenshot](https://github.com/MorningStarTM/skull-stripping/blob/main/images/u1.PNG?raw=true)
+
+### Attention U-Net
+![App Screenshot](https://github.com/MorningStarTM/skull-stripping/blob/main/images/au1.PNG?raw=true)
 
 ## Brain image and Mask
 ![App Screenshot](https://github.com/MorningStarTM/skull-stripping/blob/main/images/u2.PNG?raw=true)
@@ -27,12 +30,20 @@ I used brain tumor dataset from kaggle and i created this dataset. This dataset 
 
 
 ## Brain Image - True Mask - Predicted Mask
+### U-Net
 ![App Screenshot](https://github.com/MorningStarTM/skull-stripping/blob/main/images/u5.PNG?raw=true)
 
 ![App Screenshot](https://github.com/MorningStarTM/skull-stripping/blob/main/images/u7.PNG?raw=true)
 
 
+### Attention U-Net
+![App Screenshot](https://github.com/MorningStarTM/skull-stripping/blob/main/images/au3.PNG?raw=true)
+
+
+
+
 ## Brain Image - Mask - Stripped Brain
+### U-Net
 ![App Screenshot](https://github.com/MorningStarTM/skull-stripping/blob/main/images/u3.PNG?raw=true)
 
 ![App Screenshot](https://github.com/MorningStarTM/skull-stripping/blob/main/images/u4.PNG?raw=true)
@@ -40,3 +51,31 @@ I used brain tumor dataset from kaggle and i created this dataset. This dataset 
 ![App Screenshot](https://github.com/MorningStarTM/skull-stripping/blob/main/images/u6.PNG?raw=true)
 
 ![App Screenshot](https://github.com/MorningStarTM/skull-stripping/blob/main/images/u8.PNG?raw=true)
+
+
+### Attention U-Net
+![App Screenshot](https://github.com/MorningStarTM/skull-stripping/blob/main/images/au4.PNG?raw=true)
+
+![App Screenshot](https://github.com/MorningStarTM/skull-stripping/blob/main/images/au5.PNG?raw=true)
+
+![App Screenshot](https://github.com/MorningStarTM/skull-stripping/blob/main/images/au6.PNG?raw=true)
+
+![App Screenshot](https://github.com/MorningStarTM/skull-stripping/blob/main/images/au7.PNG?raw=true)
+
+
+# Model Comparison
+![App Screenshot](https://github.com/MorningStarTM/skull-stripping/blob/main/images/output_1.png?raw=true)
+
+![App Screenshot](https://github.com/MorningStarTM/skull-stripping/blob/main/images/output_1.png?raw=true)
+
+![App Screenshot](https://github.com/MorningStarTM/skull-stripping/blob/main/images/output_3.png?raw=true)
+
+![App Screenshot](https://github.com/MorningStarTM/skull-stripping/blob/main/images/output_4.png?raw=true)
+
+![App Screenshot](https://github.com/MorningStarTM/skull-stripping/blob/main/images/output_1_1.png?raw=true)
+
+![App Screenshot](https://github.com/MorningStarTM/skull-stripping/blob/main/images/output_2_2.png?raw=true)
+
+![App Screenshot](https://github.com/MorningStarTM/skull-stripping/blob/main/images/output_3_1.png?raw=true)
+
+![App Screenshot](https://github.com/MorningStarTM/skull-stripping/blob/main/images/output_4_1.png?raw=true)
