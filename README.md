@@ -20,13 +20,14 @@ I used brain tumor dataset from kaggle and i created this dataset. This dataset 
 ## __Images and Mask__
 ### U-Net
 ![App Screenshot](https://github.com/MorningStarTM/skull-stripping/blob/main/images/u1.PNG?raw=true)
+<br>
 
 ### Attention U-Net
 ![App Screenshot](https://github.com/MorningStarTM/skull-stripping/blob/main/images/au1.PNG?raw=true)
 
 ## Brain image and Mask
 ![App Screenshot](https://github.com/MorningStarTM/skull-stripping/blob/main/images/u2.PNG?raw=true)
-
+<br>
 
 
 ## __Brain Image - True Mask - Predicted Mask__
@@ -35,11 +36,13 @@ I used brain tumor dataset from kaggle and i created this dataset. This dataset 
 
 ![App Screenshot](https://github.com/MorningStarTM/skull-stripping/blob/main/images/u7.PNG?raw=true)
 
+<br>
 
 ### Attention U-Net
 ![App Screenshot](https://github.com/MorningStarTM/skull-stripping/blob/main/images/au3.PNG?raw=true)
 
-
+<br>
+<br>
 
 
 ## __Brain Image - Mask - Stripped Brain__
@@ -52,6 +55,7 @@ I used brain tumor dataset from kaggle and i created this dataset. This dataset 
 
 ![App Screenshot](https://github.com/MorningStarTM/skull-stripping/blob/main/images/u8.PNG?raw=true)
 
+<br>
 
 ### Attention U-Net
 ![App Screenshot](https://github.com/MorningStarTM/skull-stripping/blob/main/images/au4.PNG?raw=true)
@@ -62,6 +66,7 @@ I used brain tumor dataset from kaggle and i created this dataset. This dataset 
 
 ![App Screenshot](https://github.com/MorningStarTM/skull-stripping/blob/main/images/au7.PNG?raw=true)
 
+<br>
 <br>
 <br>
 
