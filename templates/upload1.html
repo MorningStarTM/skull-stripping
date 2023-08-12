@@ -1,0 +1,36 @@
+<!doctype html>
+<title>Skull Stripping</title>
+<h1><center>Skull Stripping</center></h1>
+<h2>Select Files</h2>
+<p>
+	{% with messages = get_flashed_messages() %}
+	  {% if messages %}
+		<ul class=flashes>
+		{% for message in messages %}
+		  <li>{{ message }}</li>
+		{% endfor %}
+		</ul>
+	  {% endif %}
+	{% endwith %}
+</p>
+
+<form method="post" action="/" enctype="multipart/form-data">
+    <dl>
+		<p>
+			<input type="file" name="files[]" multiple="true" autocomplete="off" required>
+		</p>
+    </dl>
+    <p>
+		<input type="submit" value="Submit">
+	</p>
+	<h2>Select the Model</h2>
+	<select name="model">
+		{% for model in model_names %}
+			<option value="{{ model }}">{{ model }}</option>
+		{% endfor %}
+	</select>
+</form>
+
+{% if message%}
+	<p>{{ message }}</p>
+{% endif %}
