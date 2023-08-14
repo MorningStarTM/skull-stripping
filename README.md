@@ -12,6 +12,8 @@ I used brain tumor dataset from kaggle and i created this dataset. This dataset 
 | ------------------- | ----------- |
 | U-Net               | 79%         |
 | Attention U-Net     | 82.94%      |
+| ResUNet             | 87.77%      |
+
 
 # Mask Prediction
 
