@@ -6,74 +6,113 @@
     <title>Skull Stripping</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #1a1a1a;
-            margin: 0;
-            padding: 0;
-            color: #ffffff;
-        }
-        .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-        }
-        .left-section, .right-section {
-            width: 45%;
-            padding: 20px;
-            background-color: #292929;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-        }
-        .left-section {
-            margin-right: 20px;
-        }
-        h1 {
-            text-align: center;
-            padding-top: 20px;
-            color: #536968;
-        }
-        h2 {
-            color: #536968;
-            margin-bottom: 10px;
-        }
-        select, input[type="file"], input[type="submit"] {
-            width: 100%;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            margin-bottom: 15px;
-            background-color: #444444;
-            color: #ffffff;
-        }
-        input[type="submit"] {
-            background-color: #536968;
-            color: #ffffff;
-            cursor: pointer;
-        }
+        font-family: Arial, sans-serif;
+        background-color: #1a1a1a;
+        margin: 0;
+        padding: 0;
+        color: #ffffff;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .right-section {
+        padding: 20px;
+        background-color: #292929;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+        text-align: center;
+        padding-top: 20px;
+        color: #536968;
+    }
+
+    h2 {
+        color: #536968;
+        margin-bottom: 10px;
+    }
+
+    select,
+    input[type="file"],
+    input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        margin-bottom: 15px;
+        background-color: #444444;
+        color: #ffffff;
+    }
+
+    input[type="submit"] {
+        background-color: #404040; /* Dark gray mixed with army green */
+        color: #ffffff;
+        cursor: pointer;
+    }
+
+    form {
+        text-align: center;
+    }
+
+    /* Custom styling for select element */
+    .selectpicker {
+        background-color: #000000; /* Light black */
+        color: #ffffff;
+        border: none;
+    }
+
+    /* Custom styling for container div */
+    .container {
+        background-color: #183028; /* Dark green */
+    }
+
+    /* Center text within select element */
+    .selectpicker option {
+        text-align: center;
+    }
+
+    /* Center text within submission button */
+    input[type="submit"] {
+        text-align: center;
+    }
+
+    /* Center text within h2 elements */
+    h2 {
+        text-align: center;
+    }
+
     </style>
 </head>
 <body>
     <h1>SKULL STRIPPING</h1>
     <div class="container">
-        <div class="left-section">
-            <h2>Select the Model</h2>
-            <select name="model">
-                {% for model in model_names %}
-                    <option value="{{ model }}">{{ model }}</option>
-                {% endfor %}
-            </select>
-        </div>
         <div class="right-section">
-            <h2>Select Files</h2>
-            <form method="post" action="/" enctype="multipart/form-data">
+            <form method="POST" action="/" enctype="multipart/form-data" class="form-inline">
+                <h2>Select the Model</h2>
+                <select name="model_input" class="selectpicker form-control">
+                    {% for model in model_names %}
+                        <option value="{{ model }}">{{ model }}</option>
+                    {% endfor %}
+                </select>
+                <h2>Select Files</h2>
                 <input type="file" name="files[]" multiple="true" autocomplete="off" required>
                 <input type="submit" value="Submit">
+
+                
             </form>
         </div>
     </div>
     {% if message %}
-        <p>{{ message }}</p>
+        <p><center>{{ message }}</center></p>
+    {% endif %}
+    {% if model_in %}
+        <p><center>{{ model_in }}</center></p>
     {% endif %}
 </body>
 </html>

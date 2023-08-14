@@ -8,13 +8,13 @@ from werkzeug.utils import secure_filename
 
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 
-model_names = ["Model 1", "Model 2", "Model 3"]
+model_names = ["U-Net", "Attention-U-Net", "Model 3"]
 
 def allowed_file(filename):
 	return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 	
 @app.route('/')
-def upload_form():
+def upload():
 	return render_template('upload.html', model_names=model_names)
 
 @app.route('/', methods=['POST'])
@@ -23,6 +23,8 @@ def upload_image():
 		flash('No file part')
 		return redirect(request.url)
 	files = request.files.getlist('files[]')
+	model_in = request.form.get("model_input")
+	print(str(model_in))
 	file_names = []
 	images = []
 	for file in files:
@@ -30,7 +32,7 @@ def upload_image():
 			filename = secure_filename(file.filename)
 			file_names.append(filename)
 			file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-	message = predict("static\\uploads")
+	message = predict("static\\uploads", str(model_in))
 
 		#else:
 		#	flash('Allowed image types are -> png, jpg, jpeg, gif')
@@ -38,7 +40,7 @@ def upload_image():
 
     
 
-	return render_template('upload.html', filenames=file_names, model_names=model_names, message=message)
+	return render_template('done.html', filenames=file_names, model_names=model_names, message=message)
 
 """@app.route('/', methods=['POST'])
 def predict():

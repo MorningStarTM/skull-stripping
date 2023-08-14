@@ -24,8 +24,15 @@ def dice_coef(y_true, y_pred):
 def dice_loss(y_true, y_pred):
     return 1.0 - dice_coef(y_true, y_pred)
 
-with tf.keras.utils.CustomObjectScope({'iou':iou, 'dice_coef':dice_coef, 'dice_loss':dice_loss}):
-    model = tf.keras.models.load_model("models\\unet_for_skull_stripping.h5")
+def load_model_by_user(model_path):
+    with tf.keras.utils.CustomObjectScope({'iou':iou, 'dice_coef':dice_coef, 'dice_loss':dice_loss}):
+        model = tf.keras.models.load_model(model_path)
+    return model
+
+#create folder for save augmented images
+def create_dir(path):
+    if not os.path.exists(path):
+        os.makedirs(path)
 
 #process image function
 def read_img(path):
@@ -35,7 +42,15 @@ def read_img(path):
     img = img.astype(np.float32)
     return img
 
-def predict(path):
+def predict(path, model_in):
+    username = os.getenv('username')
+    create_dir(f"C:\\Users\\{username}\\Downloads\\results")
+    if model_in == "U-Net":
+        model = load_model_by_user("models\\unet_for_skull_stripping.h5")            
+    if model_in == "Attention-U-Net":
+        model = load_model_by_user("models\\attn-unet_for_skull_stripping.h5")
+
+    #Downloads
     images = sorted(glob(os.path.join(path,"*")))
     for i in range(len(images)):
         print(images[i])
@@ -48,7 +63,12 @@ def predict(path):
         maskImg = cv2.imread("static\\predicted\\mask-1.png")
         maskImg = cv2.cvtColor(maskImg, cv2.COLOR_BGR2GRAY)
         masked = cv2.bitwise_and(image, image, mask=maskImg)
-        plt.imsave(f"static\\results\\stripped{i}.png", masked)
-        message = "Done"
-    
-    return message
+        plt.imsave(f"C:\\Users\\{username}\\Downloads\\results\\stripped{i}.png", masked)
+
+    for file_name in images:
+        try:
+            os.remove(file_name)
+            print(f"Deleted: {file_name}")
+        except Exception as e:
+            print(f"Error deleting {file_name}: {e}")
+    return "done"
