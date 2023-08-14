@@ -86,3 +86,9 @@ I used brain tumor dataset from kaggle and i created this dataset. This dataset 
 ![App Screenshot](https://github.com/MorningStarTM/skull-stripping/blob/main/images/output_3_1.png?raw=true)
 
 ![App Screenshot](https://github.com/MorningStarTM/skull-stripping/blob/main/images/output_4_1.png?raw=true)
+<br>
+<br>
+<br>
+
+# Web Application 
+![App Screenshot](https://github.com/MorningStarTM/skull-stripping/blob/main/images/webapp.PNG?raw=true)
